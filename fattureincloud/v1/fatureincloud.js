@@ -29,7 +29,7 @@ function getScriptMetadata() {
 function executeScript(scriptEvent) {
     log.warn('hello from script with event: ' + scriptEvent);
     log.warn('extension parameters are: ' + extensionParameters);
-    var postResult = simpleHttpClient.get('https://csrng.net/csrng/csrng.php?min=0&max=100').getJsonBody()[0].random;
+    var postResult = creaFattura(scriptEvent);
     log.warn('the first request generated: ' + postResult);
     return {
         invoiceNumber: 123
